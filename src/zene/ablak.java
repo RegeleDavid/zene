@@ -31,9 +31,6 @@ public class ablak extends javax.swing.JFrame {
     Player player;
     Thread th, th1;    
     ArrayList<String> lista=new ArrayList<>();
-    void add(){
-        
-    }
     void play1(){
         th1=new Thread(){
             @Override
@@ -89,7 +86,7 @@ public class ablak extends javax.swing.JFrame {
         return null;
     }
     
-    public ablak() throws FileNotFoundException, JavaLayerException{
+    public ablak() {
         initComponents();
         lista_zene.setEnabled(false);
         setTitle("Zene lejátszó");
@@ -190,11 +187,10 @@ public class ablak extends javax.swing.JFrame {
        play1();
        if(null!=th1){
            System.out.println("meget");
-          
            th1.start();
        }
        jButton1.setEnabled(false);
-        jButton2.setEnabled(true);
+       jButton2.setEnabled(true);
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -235,13 +231,7 @@ public class ablak extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                try {
-                    new ablak().setVisible(true);
-                } catch (FileNotFoundException ex) {
-                    Logger.getLogger(ablak.class.getName()).log(Level.SEVERE, null, ex);
-                } catch (JavaLayerException ex) {
-                    Logger.getLogger(ablak.class.getName()).log(Level.SEVERE, null, ex);
-                }
+                new ablak().setVisible(true);
             }
         });
     }
